@@ -1,0 +1,22 @@
+import tweepy
+import tweepy.api
+
+auth = tweepy.OAuthHandler('x', 'x')
+
+api = tweepy.API(auth)
+
+try:
+    redirect_url = auth.get_authorization_url()
+except tweepy.TweepError:
+    print('Error! Failed to get request token.')
+
+print(redirect_url)
+
+verifier = input('Go: ')
+
+try:
+    finaltoken = auth.get_access_token(verifier)
+except tweepy.TweepError:
+    print('Error! Failed to get access token.')
+
+print(finaltoken)
