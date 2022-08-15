@@ -1,0 +1,4 @@
+response = client.create_tweet(
+    text="This Tweet was Tweeted usin weepy and Twitter API v2!"
+)
+print(f"https://twitter.com/user/status/{response.data['id']}")
